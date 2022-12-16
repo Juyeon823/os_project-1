@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy to GKE') {
                         when {
-                                branch 'main'
+                                branch 'master'
                         }
             steps{
                 sh "sed -i 's/hello:latest/hello:${env.BUILD_ID}/g' deployment.yaml"
